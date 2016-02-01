@@ -53,12 +53,11 @@
     id))
 
 (defn read-message [id]
-  (let [msg (-> (query db (str "select * from messages where id=\"" id  "\""))
-                first)
-        msg (assoc msg :datetime (f/parse db-datetime-fmt (:datetime msg))
-                       :pw-cnt (:pw_cnt msg))]
-    (clojure.pprint/pprint msg)
-    (when-let [m msg]
+  (when-let [msg (-> (query db (str "select * from messages where id=\"" id  "\""))
+                     first)]
+    (let [msg (assoc msg :datetime (f/parse db-datetime-fmt (:datetime msg))
+                     :pw-cnt (:pw_cnt msg))]
+      (clojure.pprint/pprint msg)
       (embargo msg))))
 
 (comment
