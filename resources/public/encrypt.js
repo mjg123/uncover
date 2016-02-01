@@ -60,3 +60,11 @@ function oneMorePassword(){
 }
 
 document.getElementById("onemorepw").onclick = oneMorePassword
+
+function submitCheck(){
+    if (getPassword() !== "" && !is_encrypted){
+        return confirm( "You have entered a password but not encrypted the message. Do you really want to save it unencrypted?" )
+    }
+}
+
+document.getElementById("theform").onsubmit = submitCheck

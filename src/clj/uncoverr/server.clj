@@ -41,7 +41,7 @@
 (defroutes main-routes
 
   (GET "/" []
-       (body [:form {:action "/" :method "POST"}
+       (body [:form {:id "theform" :action "/" :method "POST"}
               [:div {:class "col-md-12"}
                [:input {:class "form-control" :name "title" :placeholder "UNTITLED"}]
                [:textarea {:id "message"
