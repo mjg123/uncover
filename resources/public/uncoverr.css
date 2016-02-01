@@ -1,0 +1,35 @@
+body {
+    background: #EEF;
+}
+
+textarea {
+    height: 480px !important;
+}
+
+input[readonly]{
+    background: #FFF !important;
+}
+textarea[readonly] {
+    background: #FFF !important;
+}
+
+.form-control {
+    margin-bottom: 8px;
+}
+
+.btn {
+    margin-bottom: 8px !important;
+}
+
+textarea[readonly].alert-danger {
+    background: repeating-linear-gradient(
+                        45deg,
+                        #FEE,
+                        #FEE 10px,
+                        #FDD 10px,
+                        #FDD 20px
+                    ) !important;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
